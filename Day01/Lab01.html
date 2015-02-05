@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<script src="angular.min.js"></script>
+		<script>
+		var game = {
+			target : Math.round(Math.random()*100),
+			attempts : 0,
+			message : "",
+			gameOver : false,
+			play : function(guess){
+				this.attempts++;
+				if(guess > this.target)
+					this.message = "Aim Lower";
+				else if(guess < this.target)
+					this.message = "Aim Higher";
+				else{
+					this.message = "You've got it!!!";
+					this.gameOver = true;
+				}
+			}
+		};
+		console.log(game.target);
+
+		var Game = angular.module("Game",[]);
+		Game.controller("PlayController",function($scope){
+			$scope.play = function(){
+				var guess = $scope.guess;
+				game.play(guess);
+				$scope.message = game.message;
+				$scope.attempts = "Attempts: " + game.attempts;
+				if(game.gameOver)
+					$scope.disablePlay = true;
+			}
+		});
+		</script>
+	</head>	
+	<body>
+
+		<div ng-app="Game">
+			<h1>Welcome to the Guessing Game</h1>
+			<div ng-controller="PlayController">
+				Number<input type="number" ng-model="guess"><br/>
+				<input type="button" 
+					value="Guess"
+					ng-click="play()"
+					 ng-disabled="disablePlay">
+				<h4>{{message}}</h4>
+				<h4>{{attempts}}</h4>	
+			</div>	
+		</div>	
+				
+	</body>	
+</html>
