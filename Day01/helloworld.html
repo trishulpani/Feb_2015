@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script>
+		function display(){
+			var name = document.getElementById("nametext").value;
+			var message = document.getElementById("message");
+			message.innerHTML = "Hello " + name;
+		}
+		</script>
+	</head>	
+	<body>
+		Name<input type="text" 
+		    id="nametext" onkeyup="display();">
+		<h1 id="message"></h1>	
+	</body>	
+</html>

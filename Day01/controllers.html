@@ -1,0 +1,33 @@
+<html ng-app="CTS">
+	<head>
+		<script src="angular.min.js"></script>
+		<script>
+		var ctsModule = angular.module("CTS",[]);
+		ctsModule.controller("MyController1",
+				function($scope){
+					console.log("MyController1 created");
+					$scope.doSomething = function(){
+						$scope.message = "Hello " + $scope.name;
+					}
+				});
+		</script>
+	</head>	
+	<body>
+			<div ng-controller="MyController1">
+				Name<input type="text" ng-model="name">
+				<input type="button" value="Click" ng-click="doSomething();">
+				<h4>{{message}}</h4>
+			</div>
+			<div ng-controller="MyController1">
+				Name<input type="text" ng-model="name">
+				<input type="button" value="Click" ng-click="doSomething();">
+				<h4>{{message}}</h4>
+			</div>
+			<div ng-controller="MyController1">
+				Name<input type="text" ng-model="name">
+				<input type="button" value="Click" ng-click="doSomething();">
+				<h4>{{message}}</h4>
+			</div>
+				
+	</body>	
+</html>

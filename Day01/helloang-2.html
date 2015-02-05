@@ -1,0 +1,21 @@
+<html ng-app="CTS">
+	<head>
+		<script src="angular.min.js"></script>
+		<script>
+		var ctsModule = angular.module("CTS",[]);
+		ctsModule.controller("Day01Controller",
+		    function($scope){
+				$scope.doSomething = function(){
+					$scope.message = "Hello " + $scope.name;
+				}
+		    });
+		</script>
+	</head>	
+	<body ng-controller="Day01Controller">
+		Name<input type="text" ng-model="name">
+		<input type="button" 
+		 value="Click" ng-click="doSomething()">
+		 
+		<h2>{{message}}</h2> 
+	</body>	
+</html>
