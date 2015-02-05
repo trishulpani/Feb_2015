@@ -1,0 +1,21 @@
+<html ng-app="CTS">
+	<head>
+		<script src="angular.min.js"></script>
+		<script>
+		var cts = angular.module("CTS",[]);
+		cts.controller("EveningController",
+			function($scope,$sce){
+				$scope.generateHtml = function(){
+					var message = "<input type='text'>";
+					message += "<input type='button' value='Do'>"
+					$scope.message = $sce.trustAsHtml(message);
+				}
+			});
+		</script>
+	</head>	
+	<body ng-controller="EveningController">
+		<input type="button" value="Click" ng-click="generateHtml()">
+			<div ng-bind-html="message"></div>
+		
+	</body>	
+</html>
