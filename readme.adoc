@@ -1,0 +1,183 @@
+= Angular JS and Node JS
+
+[abstract]
+Prabhu Sunderaraman +
+Email: prabhu@durasoftindia.com +
+Blog: http://healthycoder.in +
+Books: Practical Ext JS 4, Spring 3.0 Black Book +
+Editor: http://healthycodemagazine.com +
+
+== Topics.todo
+
+=== I
+
+*	Single Page Apps
+*	Scope of Angular JS
+*	Features of Angular JS application
+*	MVC pattern
+*	Setting up
+*	A Sample application
+
+=== II
+
+*	Function hoisting
+*	arguments keyword
+*	Callback functions
+*	Returning functions
+*	Function properties
+*	Instantiating functions
+*	this keyword
+*	Closures
+*	JSON
+
+=== III
+
+*	Angular JS Architecture
+*	Modules
+*	Controllers
+*	Templates
+*	Views
+*	Services
+*	Directives
+*	Routing
+
+=== IV
+
+*	Modules
+*	Organizing files and folders
+*	Asynchronous loading
+*	Controller basics
+*	Binding a Model
+*	ngModelController
+*	Expressions
+*	Templates
+*	Two-way binding
+
+=== V
+
+*	Forms
+*	Validation
+*	ngBind directive
+*	ngRepeat directive
+*	Handling events
+*	Creating Filters
+*	Built-in and Custom filters
+
+
+=== VI
+
+*	Built-in services
+*	$http, $q
+*	$anchorScroll
+*	$compile, $parse
+*	$locale
+*	$timeout
+*	$filter
+*	Custom Services
+*	Routing
+
+=== VII
+
+*	Defining routes
+*	$route, $location
+*	Route roles 
+*	Route parameters
+*	History API in HTML 5
+
+=== VIII
+
+*	Directives- basics
+*	Directive lifecycle
+*	Custom directive
+*	Directive scope
+*	Transclusion
+*	Directive controllers
+*	Directives Compilation
+
+=== IX
+
+*	Problem Statement
+*	Design discussions
+
+=== X
+		
+*	Server-side JavaScript
+*	Overview of Node JS
+*	Working of Node JS applications
+*	Architecture of Node JS
+*	Event Loop
+*	Setup
+*	npm
+*	A Sample application
+*	package.json
+
+=== XI
+		
+*	Modules 
+*	require()
+*	exports
+*	Creating and accessing modules
+*	Installing 3rd party modules
+*	Building custom modules
+*	Commonly used modules
+
+
+=== XII
+		
+*	Event-based architecture
+*	EventEmitter
+*	Streams
+*	Reading and Writing Streams
+*	Interacting with the File system
+*	fs module
+*	Process object
+*	Spawn processes
+*	Buffers
+*	Asynchronous programming
+*	Setting up a Cluster
+*	cluster modules
+
+
+=== XIII
+		
+*	TCP endpoints
+*	Socket server
+*	Exchanging messages
+*	Client socket connections
+*	Socket.io
+*	Broadcast messages
+*	Publisher/Subscriber pattern
+*	Messaging library
+
+=== XIV
+		
+*	Accessing MySQL
+*	Mysql module
+*	Accessing MongoDB
+*	Mongoose module
+*	CRUD operations
+
+=== XV	
+	
+*	Http module
+*	Express JS library
+*	Controllers
+*	Routing
+*	Storing Session data
+*	RESTful interface
+*	Single page application
+*	Securing 
+*	Introduction to MEAN stack
+
+=== XVI
+		
+*	Build using Grunt
+*	Mocha.js and Karma.js
+*	Deploying in cloud
+*	A Heroku exercise
+
+=== XVII
+
+*	Review of Angular UI
+*	Design the Node JS server
+
