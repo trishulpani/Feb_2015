@@ -7,6 +7,14 @@ Blog: http://healthycoder.in +
 Books: Practical Ext JS 4, Spring 3.0 Black Book +
 Editor: http://healthycodemagazine.com +
 
+
+== Modus Operandi
+
+* Zero-PowerPoint Presentation
+* Learn basic concepts by writing code
+* Learn advanced concepts by writing code
+* Experiment new stuff by writing code
+
 == Topics.todo
 
 === I
