@@ -3,19 +3,42 @@
 		<script src="angular.min.js"></script>
 		<script>
 		var cts = angular.module("CTS",[]);
+		cts.directive('bindHtmlUnsafe', function( $parse, $compile ) {
+		    return function( $scope, $element, $attrs ) {
+		        var compile = function( newHTML ) {
+		            newHTML = $compile(newHTML)($scope);
+		            $element.html('').append(newHTML);        
+		        };
+
+		        var htmlName = $attrs.bindHtmlUnsafe;
+
+		        $scope.$watch(htmlName, function( newHTML ) {
+		            if(!newHTML) return;
+		            compile(newHTML);
+		        });
+
+		    };
+		});
 		cts.controller("EveningController",
-			function($scope,$sce){
+			function($scope,$sce,$compile){
+				$scope.cool = function(){
+					console.log("COOL");
+				}
 				$scope.generateHtml = function(){
 					var message = "<input type='text'>";
-					message += "<input type='button' value='Do'>"
-					$scope.message = $sce.trustAsHtml(message);
+					message += "<input type='button' value='Do' ng-click='cool()'>"
+					var compiled = $compile(message)($scope);
+					console.log(compiled);
+					console.log(document.getElementById("cooldiv"));
+					document.getElementById("cooldiv").appendChild(compiled);
+					//$scope.message = $sce.trustAsHtml(compiled);
 				}
 			});
 		</script>
 	</head>	
 	<body ng-controller="EveningController">
 		<input type="button" value="Click" ng-click="generateHtml()">
-			<div ng-bind-html="message"></div>
+			<div ng-bind-html="message" id="cooldiv"></div>
 		
 	</body>	
 </html>

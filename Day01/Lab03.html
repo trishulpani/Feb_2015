@@ -1,0 +1,48 @@
+<html ng-app="Lab03">
+	<head>
+		<script src="angular.min.js"></script>
+		<script>
+			angular.module("Lab03",[])
+		.controller("Lab03Controller",function($scope){
+			$scope.persons = [];
+			$scope.showPersons = false;
+			 
+			$scope.addPerson = function(){
+				$scope.showPersons = true;
+				var person = {
+					name : $scope.name,
+					age : $scope.age,
+					selectedForRemoval : false
+				}
+				$scope.persons.push(person);	 
+			}
+			$scope.removePersons = function(){
+				$scope.persons = $scope.persons.filter(function(p){
+					return !p.selectedForRemoval;
+				});
+			}
+		});
+		</script>
+	</head>				
+	<body ng-controller="Lab03Controller">
+		<input type="text" placeholder="Name" ng-model="name"><br/>
+		<input type="text" placeholder="Age" ng-model="age"><br/>
+		<input type="button" value="Add" ng-click="addPerson()"><br/>
+		<hr/>
+		<table border="1" ng-show="showPersons">
+			<thead>
+				<tr>
+					<th>Name</th><th>Age</th><th>Select</th>
+				</tr>	
+			</thead>
+			<tbody ng-repeat="p in persons">
+				<tr>
+					<td>{{p.name}}</td>
+					<td>{{p.age}}</td>
+					<td><input type="checkbox" ng-model="p.selectedForRemoval"></td>
+				</tr>		
+			</tbody>			
+		</table>
+		<input type="button" value="Remove" ng-click="removePersons()" ng-show="showPersons">	
+	</body>	
+</html>
