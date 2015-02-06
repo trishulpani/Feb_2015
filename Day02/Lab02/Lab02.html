@@ -1,0 +1,35 @@
+<html ng-app="Food">
+	<head>
+		<script src="angular.js"></script>
+		<script src="modules.js"></script>
+		<script src="services.js"></script>
+		<script src="controllers.js"></script>
+	</head>
+	<body>
+		<div ng-controller="MenuController">
+			<table>
+				<tr ng-repeat="item in menu">
+					<td>{{item.name}}</td>
+					<td>{{item.price}}</td>
+					<td>
+						<input type="button" value="+" ng-click="addToCart(item)">
+					</td>
+				</tr>	
+			</table>	
+		</div>	
+		<hr/>
+		<div ng-controller="ShoppingCartController">
+			<table>
+				<tr ng-repeat="item in cart">
+					<td>{{item.name}}</td>
+					<td>{{item.price * item.quantity}}</td>
+					<td>{{item.quantity}}</td>
+					<td>
+						<input type="button" value="-" ng-click="removeFromCart(item)">
+					</td>
+				</tr>	
+			</table>	
+			<h1>Total : {{total}}</h1>
+		</div>
+	</body>		
+</html>
