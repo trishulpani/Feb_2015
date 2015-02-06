@@ -1,0 +1,63 @@
+<html ng-app="Lab01">
+	<head>
+		<style>
+		.loginscreen {
+			border-width:0.1em;
+			width : 20%;
+			padding : 5%;
+			border-style:inset;
+			position:relative;
+			top:20%;left:30%;
+			-webkit-box-shadow: 1px 1px 1px black;
+		}
+		</style>
+		<script src="angular.js"></script>
+		<script>
+		var Lab01 = angular.module("Lab01",[]);
+		Lab01.controller("AuthController",function($scope,$rootScope){
+			$scope.showLoginScreen = true;
+			$scope.$on("loggedOut",function(){
+				$scope.showLoginScreen = true;
+			})
+			$scope.login = function(){
+				if($scope.username == "admin" && 
+			 		$scope.password == "admin"){
+						$scope.loginError = false;
+						$scope.showLoginScreen = false;
+						$rootScope.$broadcast("loggedIn");	
+				}
+				else{
+					$scope.loginError = true;
+				}
+			}
+			
+		});
+		Lab01.controller("HomeController",function($scope,$rootScope){
+			$scope.showHomeScreen = false;
+			$scope.$on("loggedIn",function(){
+				$scope.showHomeScreen = true;
+			});
+			$scope.logout = function(){
+				$scope.showHomeScreen = false;
+				$rootScope.$broadcast("loggedOut");
+			}
+		});
+		</script>
+	</head>	
+	<body>
+		<div ng-controller="AuthController" class="loginscreen"
+			ng-show="showLoginScreen">
+			<input type="text" placeholder="User Name" ng-model="username"><br/>
+			<input type="password" placeholder="Password" ng-model="password"><br/>		
+			<input type="button" 
+			 value="Login" ng-click="login()">
+			<h5 ng-show="loginError">Invalid Credentials</h5>	 
+		</div>	
+		<div ng-controller="HomeController" ng-show="showHomeScreen" class="homescreen">
+			<h1>Welcome</h1>
+			<input type="button" 
+				value="Logout" 
+				ng-click="logout()">
+		</div>	
+	</body>	
+</html>
