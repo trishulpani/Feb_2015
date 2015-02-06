@@ -5,6 +5,16 @@ function Car(theModel){
 	}
 }
 
+/*
+Array.prototype.findAll = function(o){
+	var n = [];
+	for(var i=this.length-1;i>-1;i--){
+		if(o(this[i]))
+			n.push(this[i]);
+	}
+	return n;	
+};
+*/
 Array.prototype.findAll = function(callback){
 	var items = [];
 	for(var i=0;i<this.length;i++){
@@ -13,6 +23,7 @@ Array.prototype.findAll = function(callback){
 	}
 	return items;	
 };
+
 
 Array.prototype.find = function(callback){
 	var number;

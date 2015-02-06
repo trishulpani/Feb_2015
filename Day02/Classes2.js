@@ -1,3 +1,13 @@
+var BookService = function(){
+				this.title = "";
+				this.price = -1;
+				this.buy = function(store){
+					console.log("Buying " + this.title + " from " + store);
+				};
+var obj = new BookService();
+obj.buy("FK");
+obj.buy("Amazon");								
+
 var b1 = new Object();
 b1.title = "ABC";
 b1.price = 1000;

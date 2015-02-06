@@ -1,0 +1,38 @@
+<html ng-app="CTS">
+	<head>
+		<script src="angular.js"></script>
+		<script>
+		var CTS = angular.module("CTS",[]);
+		CTS.service("BookService",function(){
+				this.title = "ABC";
+				this.price = 9.99;
+				this.buy = function(store){
+					console.log("Buying " + this.title + " from " + store);
+				}
+		});
+		CTS.controller("One",function($scope,BookService){
+			$scope.changePrice = function(){
+				BookService.price = 199.99;
+				
+			}
+			//BookService.buy("Flipkart");
+			//console.log(BookService.price);
+		});
+		CTS.controller("Two",function($scope,BookService){
+			$scope.$watch(function(){
+				return BookService.price;
+			},function(newValue){
+				console.log("CHANGED price to " + newValue);
+			});
+			//BookService.buy("Amazon");
+			//console.log(BookService.price);
+		});
+		</script>
+	</head>	
+	<body>
+		<div ng-controller="One">
+			<input type="button" value="Do" ng-click="changePrice()">
+		</div>
+		<div ng-controller="Two"></div>
+	</body>	
+</html>
