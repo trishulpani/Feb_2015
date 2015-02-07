@@ -1,0 +1,50 @@
+<html ng-app="Saturday">
+	<head>
+		<script src="angular.js"></script>
+		<script>
+		var saturday = angular.module("Saturday",[]);
+		saturday.filter("u",function(){
+			return function(value){
+				//return "WTH";
+				return value.toUpperCase();
+			}
+		});
+		saturday.filter("beginsWith",function(){
+			return function(items,param1){
+				return items.filter(function(it){
+					return it.name.substring(0,1) == param1;
+				});
+			}
+		});
+		saturday.filter("ageGreaterThan",function(){
+			return function(items,param1){
+				return items.filter(function(it){
+					return it.age > param1;
+				});
+			}
+		});
+		saturday.controller("Doomed",function($scope){
+			$scope.people = [
+				{name:"Sam",age:12},	
+				{name:"Ram",age:22},			
+				{name:"John",age:42},
+				{name:"Joe",age:39}
+			];
+			$scope.message = "hello";
+			$scope.message2 = "bye bye";
+		});
+		</script>
+	</head>	
+	<body ng-controller="Doomed">
+		<ul ng-repeat="p in people | 
+					beginsWith:'J' | 
+					ageGreaterThan:40">
+			<li>{{p.name}}, {{p.age}}</li>
+		</ul><hr/>
+		<ul ng-repeat="p in people | beginsWith:'S'">
+			<li>{{p.name}}, {{p.age}}</li>
+		</ul>	
+		<h1>{{message | uppercase}}</h1>
+		<h1>{{message2 | u}}</h1>
+	</body>	
+</html>
