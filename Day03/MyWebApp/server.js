@@ -3,6 +3,13 @@ var app = express();
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/node_modules/angular"));
 
+app.get("/StockSymbols",function(req,res){
+	var output = JSON.stringify([
+		{name:"GOOG"},{name:"HP"},{name:"FB"},{name:"IBM"},
+		{name:"INFY"},{name:"INTL"},{name:"AAPL"}
+	]);
+	res.end(output);
+});
 app.post("/GeographicServer",function(request,response){
 	var params = request.query;
 	var country = params.country;

@@ -1,0 +1,35 @@
+<html ng-app="Stocks">
+	<head>
+		<style>
+		.green {
+			background-color :green;
+		}
+		.red {
+			background-color:red;
+		}
+		</style>
+		<script src="angular.js"></script>
+		<script src="lab01modules.js"></script>
+		<script src="lab01services.js"></script>
+		<script src="lab01controllers.js"></script>
+	</head>	
+	<body ng-controller="StocksController">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Symbol</th>
+					<th>Last Trade Price</th>
+					<th>Change</th>					
+				</tr>		
+			</thead>	
+			<tr ng-repeat="symbol in symbols track by symbol.name">
+				<td>{{symbol.name}}</td>
+				<td>{{symbol.price}}</td>
+				<td  ng-class="symbol.change>0?'green':'red'" >{{symbol.change}}</td>
+			</tr>	
+		</table>	
+	</body>	
+</html>
+
+
+
