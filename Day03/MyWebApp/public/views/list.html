@@ -1,0 +1,14 @@
+<h1>List of persons</h1>
+<hr/>
+<table>
+	<tr ng-repeat="p in persons">
+		<td>{{p.name}}</td>
+		<td>{{p.age}}</td>
+		<td>
+			<input type="button" value="Edit" 					ng-click="editPerson(p)">
+		</td>
+		<td>
+			<input type="button" value="Details" 					ng-click="showDetails(p)">
+		</td>
+	</tr>	
+</table>	

@@ -20,7 +20,6 @@ angular.module("Stocks")
 		}).success(function(output){
 			var tradePrice = output.query.results.quote.LastTradePriceOnly;
 			var change = output.query.results.quote.Change;
-			console.log(tradePrice + " " + change + " " + symbol);
 			callback(symbol,tradePrice,change);
 		})
 	}
