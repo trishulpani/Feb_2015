@@ -1,0 +1,32 @@
+<html ng-app="AJAX">
+	<head>
+		<script src="angular.js"></script>
+		<script>
+		angular.module("AJAX",[])
+		.controller("WorldController",function($scope,$http){
+			$scope.getInfo = function(){
+				$http({
+					url : "GeographicServer",
+					params : {
+						country : $scope.country
+					},
+					method : "POST"
+				}).success(function(output){
+					$scope.capital = output.capital;
+					$scope.continent = output.continent;
+				});
+			}
+		});
+		</script>
+	</head>
+	<body ng-controller="WorldController">
+		<input type="text" 
+			placeholder="Country" 
+			ng-model="country">
+		<input type="button" 
+			   value="Get Info" 
+			   ng-click="getInfo();">
+		<h2>{{capital}}</h2>
+		<h2>{{continent}}</h2>
+	</body>	
+</html>
