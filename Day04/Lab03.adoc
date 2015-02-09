@@ -1,0 +1,67 @@
+= Lab 03
+:source-highlighter: pygments
+
+[abstract]
+Let's implement our 'Guessing Game' Node JS style.
+
+== To do
+
+*  Implement the guessing game application, where user plays till he/she guesses the generated random number correct. 
+*  You can start by creating a folder _Lab03_ and put all your files inside it.
+*  Write your logic in a separate module. We'll later use it for the web front end.
+*  For input from the console you can use the following code. _process_ is a built-in class in NodeJS.
+
+[source,javascript]
+----
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function (text) {
+  //text gives you the input read from the console.
+  //call process.exit() if you want to terminate.
+});
+----
+* Once the game is over, you have to create a file _game_timestamp.json_ in your current folder and write the information about the game. Your json file should have the details about the game that you have played, in JSON format.
+
+* Here's a sample behavior of the program, when played for the first time. 
+
+****
+*Welcome to the Guessing Game. Enter a number between 1 and 100.* +
+50 +
+Aim Higher +
+90 +
+Aim Lower +
+80  +
+Aim Lower +
+77 +
+You've got it in 4 attempts !!!. +
+****
+
+* Here's the sample behavior of the program, when you play it again.
+
+****
+*Welcome to the Guessing Game.*. +
+
+*Your previous game report(s)* +
+----
+Guessing Game played on 09/02/2015. +
+Target: 77 +
+Attempts: 4 +
+
+Attempt #1: 50 (Aim Higher) +
+Attempt #2: 90 (Aim Lower) +
+Attempt #3: 80 (Aim Lower) +
+Attempt #4: 77  +
+----
+*Let's begin a new game. Enter a number between 1 and 100* + 
+
+50 +
+Aim Higher +
+90 +
+Aim Lower +
+80 +
+Aim Lower +
+77 +
+You've got it in 4 attempts !!!. +
+
+****
+
+* Refer to the FileSystem  module("fs") in the core Node JS API. http://nodejs.org/api/fs.html  
