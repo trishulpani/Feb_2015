@@ -5,9 +5,9 @@ myColl1.on("add",function(item){
 	console.log("Added " + item + " to myColl1");
 });
 myColl1.on("remove",function(item,err){
-	console.log("Removed " + item + " from myColl1");
 	if(err)
-		console.log(err);
+		throw err;
+	console.log("Removed " + item + " from myColl1");
 });
 myColl1.add(12);
 myColl1.add(14);
