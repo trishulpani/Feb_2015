@@ -1,4 +1,5 @@
 console.log("EXPORTED");
-exports.eat = function(){
+module.exports.eat = function(){
 	console.log("Eating");
 }
+
