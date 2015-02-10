@@ -1,8 +1,17 @@
 <html>
 	<head>
 		<title>MyApp</title>
+		<script>
+		window.onload = function(){
+			var username = localStorage.getItem("username");
+			document.getElementById("username").innerHTML = username;
+		}
+		</script>
 	</head>
 	<body>
-		Welcome Home
+		Welcome <span id="username"></span>
+		<form action="/Logout" method="POST">
+			<input type="submit" value="Logout">
+		</form>
 	</body>	
 </html>
