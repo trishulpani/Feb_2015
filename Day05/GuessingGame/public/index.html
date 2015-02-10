@@ -1,0 +1,15 @@
+<html ng-app="Game">
+	<head>
+		<script src="lib/angular.js"></script>
+		<script src="src/modules.js"></script>
+		<script src="src/services.js"></script>
+		<script src="src/controllers.js"></script>
+	</head>
+	<body ng-controller="GameController">
+		<h1>Welcome to the Guessing Game</h1>
+		<input type="text" ng-model="guess" placeholder="Number"><br/>
+		<input type="button" value="Guess" ng-click="play()">
+		<h1>{{message}}</h1>
+		<h1>{{attempts}}</h1>
+	</body>		
+</html>
