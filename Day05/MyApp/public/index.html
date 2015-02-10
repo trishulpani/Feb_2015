@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>MyApp</title>
+		<script>
+		window.onload = function(){
+			var cookies = document.cookie;
+			if(cookies.match(/skdjfui314341/))
+				document.getElementById("error").innerHTML = "Invalid Credentials";
+			else
+				document.getElementById("error").innerHTML = "";
+		}
+		</script>
+	</head>
+	<body>
+		<form action="Login" method="POST">
+				<input type="text" 
+					name="username" placeholder="User Name"><br/>
+				<input type="password" 
+					name="password" placeholder="Password"><br/>
+				<h1 id="error"></h1>	
+				<input type="submit" value="Login">
+		</form>		
+	</body>	
+</html>
