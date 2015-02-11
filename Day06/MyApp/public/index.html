@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script src="socket.io.js"></script>
+		<script>
+			var socket = io("http://localhost:8080");
+
+			socket.on("hello",function(data){
+				console.log(data);
+			})
+			function doSomething(){
+				socket.emit("cool","Sam");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Emit" onclick="doSomething()">
+	</body>	
+</html>
