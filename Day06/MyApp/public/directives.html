@@ -1,0 +1,50 @@
+<html ng-app="App">
+	<head>
+		<script src="lib/angular/angular.js"></script>
+		<script>
+			angular.module("App",[]).
+		directive("simple",function(){
+			return {
+				restrict : "E",
+				template : "<h1>Hello {{message}}</h1>"	
+			};
+		}).
+		directive("highlight",function(){
+			return {
+				restrict : "A",
+				link : function(scope,element,attrs){
+					element.css("color",attrs["highlight"]);
+				}
+			}
+		}).
+		directive("login",function(){
+			return {
+				restrict : "E",
+				templateUrl : "login.html"
+			}
+		}).
+		controller("AppController",function($scope){
+			$scope.message = "World";
+		});
+
+		</script>
+		<script>
+		</script>
+	</head>
+	<body ng-controller="AppController">
+		<h1 highlight="red">Wednesday</h1>
+		<simple/>
+		<hr/>
+		<login></login>
+		
+		
+		
+		
+		
+	</body>	
+</html>
+
+
+
+
+
