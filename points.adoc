@@ -1,0 +1,154 @@
+= Some points
+
+== Angular JS
+
+*  Client-side UI library
+*  Based on MVC pattern
+*  Modularizes your code
+*  Latest version 1.3.x
+*  http://angularjs.org
+
+=== Modules
+
+*  Componentize your application
+*  High level grouping
+*  _angular.module("name of the module",[dependencies])_
+*  _angular.module("name of the module")_ returns the instance
+*  Instantiate a module using _ng-app="name of the module"_
+
+=== Controllers
+
+*  Used for DOM manipulation
+*  Write Event handling logic
+*  define using _module.controller("name",function(services))_
+*  Instantiate using _ng-controller="name"_
+*  Services are injected to the controller
+*  Every controller has a *$scope*
+*  All scopes inherit from  *$rootScope*
+*  If you modify the scope outside the Angular context use _$scope.$apply()_
+*  onload function, socket.io callbacks etc.
+
+=== Services
+
+*  Singletons; Shared among controllers
+*  Write your business logic inside
+*  _module.service("servicename",function(){ ... })_
+*  Inside the service function use _this.xxxx_
+*  Built-in services like $http, $compile, $location, $sce
+
+=== Routes
+
+*  Define views in different files as templates 
+*  Specify the routing/path to these files
+*  Available in _ngRoute_ module
+*  Include _angular-route.js_ file
+*  Define routes using _when_, _otherwise_ functions
+*  Load views using _ng-view_ directive
+
+== Filters
+
+*  Used as | pipe character
+*  Create a filter using _module.filter("name",function(){...})_
+*  Can apply multiple filters 
+*  p in persons | agegreater:20 | startsWith:A
+*  Built-in filters as well
+ 
+== Directives
+
+*  ng-xxx are directives
+*  Attributes and Elements 
+*  Custom directive using _module.directive("name",function)_
+*  ng-repeat, ng-click, ng-model
+
+== Node JS
+
+=== What is it?
+
+*  Server side JavaScript API
+*  standalone engine of v8 interpreter in chrome
+*  Built in C++
+*  Non-blocking and asynchronous API
+
+=== Modules
+
+*  Primary packaging unit in NodeJS
+*  _module.exports_ used to bundle a group of functions into module
+*  _require("modulename")_ used to import
+*  Core Modules; events, http, fs, https ...etc
+*  EventEmitter is usually the base for several other modules
+*  install a module by using *npm install*
+*  list all the dependent modules in _package.json_ file
+*  http://npmjs.com is the repository of all modules
+
+=== Important in coding 
+
+*  Parameterize callbacks
+*  Use higher-order functions wherever possible
+*  Be careful about the asynchronous behaviour
+*  Expect lot of blank output
+
+=== express
+
+*  Similar to Struts or Spring MVC
+*  Built upon http module
+*  Provides a template to organize your code into modules
+*  Use _express-session_ for session handling
+*  Use _express-generator_ to generate a skeleton.
+
+=== database/file system
+
+*  asynchronous API
+*  mysql is the base module for working with MySQL
+*  query("...sql..",params,callback)
+*  fs is the module for file system
+*  readFile/writeFile ("filename",params,callback)
+
+=== socket.io
+
+*  Implementation of websockets
+*  Selects the transport(xhr, websockets or flash ...)
+*  Create a server (Use on and emit functions)
+*  Create a client (include socket.io.js)
+*  Client uses (on and emit functions)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
