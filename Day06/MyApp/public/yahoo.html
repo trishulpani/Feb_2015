@@ -1,0 +1,42 @@
+<html ng-app="App">
+	<head>
+		<script src="lib/angular/angular.js"></script>
+		<script src="socket.io.js"></script>
+		<script>
+			angular.module("App",[]).
+		controller("AppController",function($scope,$window){
+			$scope.confusion = "Cool";
+			$window.onload = function(){
+				$scope.currentDate = new Date();
+				$scope.$apply();
+			}
+			var socket = io("http://localhost:8080");
+			socket.on("stocks",function(data){
+				$scope.symbol = data.symbol;
+				$scope.price = data.price;
+				$scope.$apply();
+			})
+			$scope.click = function(){
+				$scope.confusion = "I am Confused";
+				//$scope.$apply();
+			}
+		});
+		</script>
+		<script>
+		</script>
+	</head>
+	<body ng-controller="AppController">
+		<h1>{{confusion}}</h1>
+		<input type="button" 
+		value="Last day confusion" ng-click="click()">
+		<hr/>
+		<h4>{{currentDate}}</h4>
+		<h1>Stock Watcher</h1>
+		<h2>{{symbol}} : {{price}}</h2>
+	</body>	
+</html>
+
+
+
+
+
